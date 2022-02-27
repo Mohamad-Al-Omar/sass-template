@@ -1,0 +1,57 @@
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass mixins.
+// -----------------------------------------------------------------------------
+
+// Flex container
+/// @example scss - Usage
+/// selector {
+///    @include d-flex(flex, column, nowrap, center);
+/// }
+@mixin d-flex($display: flex, $dir: null, $wrap: null, $just: null) {
+  display: $display;
+  flex-direction: $dir;
+  flex-wrap: $wrap;
+  justify-content: $just;
+}
+
+/// Font-size px to rem calc
+/// @example scss - Usage
+/// selector {
+///    @include rem-font-size(16px);
+/// }
+@mixin rem-font-size($pxSize) {
+  font-size: $pxSize;
+  font-size: ($pxSize / 10px) + rem;
+}
+
+/// Mixin for styling form-placeholders
+/// @example scss - Usage
+///   @include placeholder {
+///    color: #333;
+///   }
+///
+///   input[type='text'],
+///   input[type='tel'],
+///   input[type='email'] {
+///     @include placeholder {
+///      color: red;
+///     }
+///   }
+@mixin placeholder {
+  &::-webkit-input-placeholder {
+    @content;
+  }
+  &::-moz-placeholder {
+    opacity: 1;
+    @content;
+  }
+  &:-moz-placeholder {
+    @content;
+  }
+  &:-ms-input-placeholder {
+    @content;
+  }
+  &.placeholder {
+    @content;
+  }
+}

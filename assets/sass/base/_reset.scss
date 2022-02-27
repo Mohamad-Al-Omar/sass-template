@@ -1,0 +1,30 @@
+// -----------------------------------------------------------------------------
+// This file contains reset styles.
+// -----------------------------------------------------------------------------
+
+/**
+   * Remove the margin in all browsers.
+   * Remove the padding in all browsers.
+   */
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/**
+   * 1. Remove the gray background on active links in IE 10.
+   * 2. Remove gaps in links underline in iOS 8+ and Safari 8+.
+   */
+
+a {
+  background-color: transparent; /* 1 */
+  -webkit-text-decoration-skip: objects; /* 2 */
+}
+
+/**
+   * Hide the overflow in IE.
+   */
+
+svg:not(:root) {
+  overflow: hidden;
+}
